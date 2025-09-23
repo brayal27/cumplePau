@@ -1,0 +1,70 @@
+html{
+    width : 100%;
+    background-color: #9c9c9c7c;
+}
+.luckiest-guy-regular {
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+.roboto {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1{
+    font-family: "Luckiest Guy", cursive;
+    font-size: 104px;
+    text-align: center;
+    color: rgb(2, 59, 112);
+}
+
+p{
+    font-family: "Roboto", sans-serif;
+    color: #000;
+    font-size: 18px;
+    width: 70%;
+    text-align: justify;
+    margin: 0 auto;
+}
+
+ul{
+    font-family: "Roboto", sans-serif;
+    color: #000;
+    font-size: 18px;
+    width: 70%;
+    text-align: justify;
+    margin: 0 auto;  
+    list-style-type: decimal;
+}
+
+table{
+    font-family: "Roboto", sans-serif;
+    color: #000;
+    font-size: 18px;
+    width: 70%;
+    width: 80%;
+    text-align:left;
+    margin: 40px 10%;   
+}
+table, tr, td{
+    border: 1px solid ;
+    border-collapse: collapse;
+    padding: 20px 20px 20px 20px;
+}
+#mes, #semana{
+    text-align: center;
+}
+#dias{
+    font-size: 30px;
+    text-align: left;
+}
+#calendario td a:hover img {
+  content: url("media/abierto.png");
+  transform: scale(0.8);
+}
+#calendario td a:focus img {
+  content: url("media/abierto.png");
+}
