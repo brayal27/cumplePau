@@ -77,3 +77,29 @@ table, tr, td{
 td {
     padding: 10px;         /* menos padding para móvil */
 }
+@media (max-width: 480px) {
+  table, thead, tbody, th, td, tr {
+    display: block; /* hace que todo sea bloques */
+  }
+
+  tr#mes, tr#semana {
+    display: none; /* oculta encabezados que no necesitamos */
+  }
+
+  td {
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  td a img {
+    width: 50%;     /* imágenes más pequeñas en móvil */
+    max-width: 80px;
+    height: auto;
+    display: block;
+    margin: 5px 0 0 0;
+  }
+}
