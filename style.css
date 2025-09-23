@@ -1,27 +1,29 @@
-html{
-    width : 100%;
+html {
+    width: 100%;
     background-color: #9c9c9c7c;
 }
+
 .luckiest-guy-regular {
     font-family: "Luckiest Guy", cursive;
     font-weight: 400;
     font-style: normal;
 }
+
 .roboto {
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 h1 {
     font-family: "Luckiest Guy", cursive;
-    font-size: clamp(32px, 8vw, 104px); /* tamaño mínimo 32px, máximo 104px */
+    font-size: clamp(32px, 8vw, 104px);
     text-align: center;
     color: rgb(2, 59, 112);
 }
 
-p{
+p, ul {
     font-family: "Roboto", sans-serif;
     color: #000;
     font-size: 18px;
@@ -30,50 +32,67 @@ p{
     margin: 0 auto;
 }
 
-ul{
-    font-family: "Roboto", sans-serif;
-    color: #000;
-    font-size: 18px;
-    width: 70%;
-    text-align: justify;
-    margin: 0 auto;  
+ul {
     list-style-type: decimal;
 }
 
+/* Tabla como contenedor vertical */
 table {
     font-family: "Roboto", sans-serif;
     color: #000;
     font-size: 16px;
-    width: 100%;          /* ocupa todo el ancho disponible */
-    max-width: 600px;     /* no crece demasiado en pantallas grandes */
+    width: 100%;
+    max-width: 600px;
     text-align: center;
     margin: 40px auto;
-}
-table, tr, td{
-    border: 1px solid ;
     border-collapse: collapse;
-    padding: 20px 20px 20px 20px;
 }
-#mes, #semana{
-    text-align: center;
+
+/* Cada celda como bloque vertical */
+td {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #000;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
 }
-#dias{
-    font-size: 30px;
-    text-align: left;
-}
-#calendario td img {
-    width: 80%;   /* se ajusta al ancho del td */
-    max-width: 90px; /* no crece demasiado en desktop */
+
+/* Imagenes adaptables */
+td a img {
+    width: 60%;
+    max-width: 90px;
     height: auto;
 }
 
-#calendario td a:hover img {
-  content: url("media/abierto.png");
-  transform: scale(0.8);
+/* Hover y focus para mostrar regalo abierto */
+td a:hover img,
+td a:focus img {
+    content: url("media/abierto.png");
+    transform: scale(0.8);
 }
-#calendario td a:focus img {
-  content: url("media/abierto.png");
-}
-td {
-    padding: 10px;         /* menos padding para móvil */
+
+/* Responsive: ajustes adicionales para móviles */
+@media (max-width: 480px) {
+    h1 {
+        font-size: clamp(24px, 10vw, 60px);
+    }
+
+    p, ul {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    td a img {
+        width: 70%;
+        max-width: 80px;
+    }
 }
