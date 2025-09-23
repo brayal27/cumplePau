@@ -67,6 +67,12 @@ td a img {
     max-width: 90px;
     height: auto;
 }
+td a video {
+    width: 60%;        /* igual que las imágenes */
+    max-width: 90px;
+    height: auto;
+    display: block;
+}
 
 /* Hover y focus para mostrar regalo abierto */
 td a:hover img,
