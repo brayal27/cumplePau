@@ -14,9 +14,9 @@ html{
   font-style: normal;
 }
 
-h1{
+h1 {
     font-family: "Luckiest Guy", cursive;
-    font-size: 104px;
+    font-size: clamp(32px, 8vw, 104px); /* tamaño mínimo 32px, máximo 104px */
     text-align: center;
     color: rgb(2, 59, 112);
 }
@@ -40,14 +40,14 @@ ul{
     list-style-type: decimal;
 }
 
-table{
+table {
     font-family: "Roboto", sans-serif;
     color: #000;
-    font-size: 18px;
-    width: 70%;
-    width: 80%;
-    text-align:left;
-    margin: 40px 10%;   
+    font-size: 16px;
+    width: 100%;          /* ocupa todo el ancho disponible */
+    max-width: 600px;     /* no crece demasiado en pantallas grandes */
+    text-align: center;
+    margin: 40px auto;
 }
 table, tr, td{
     border: 1px solid ;
@@ -61,10 +61,19 @@ table, tr, td{
     font-size: 30px;
     text-align: left;
 }
+#calendario td img {
+    width: 80%;   /* se ajusta al ancho del td */
+    max-width: 90px; /* no crece demasiado en desktop */
+    height: auto;
+}
+
 #calendario td a:hover img {
   content: url("media/abierto.png");
   transform: scale(0.8);
 }
 #calendario td a:focus img {
   content: url("media/abierto.png");
+}
+td {
+    padding: 10px;         /* menos padding para móvil */
 }
