@@ -78,28 +78,41 @@ td {
     padding: 10px;         /* menos padding para móvil */
 }
 @media (max-width: 480px) {
-  table, thead, tbody, th, td, tr {
-    display: block; /* hace que todo sea bloques */
+  table#calendario {
+    display: block;
   }
 
   tr#mes, tr#semana {
-    display: none; /* oculta encabezados que no necesitamos */
+    display: none; /* ocultamos encabezados de mes y semana */
+  }
+
+  tr#dias {
+    display: block; /* cada fila se vuelve bloque */
+    margin-bottom: 15px;
   }
 
   td {
+    display: flex;            /* usamos flex para apilar número + imagen */
+    flex-direction: column;   /* vertical */
+    align-items: center;      /* centramos horizontal */
     border: 1px solid #000;
-    margin-bottom: 10px;
     padding: 10px;
-    text-align: left;
+    margin-bottom: 10px;
     width: 100%;
     box-sizing: border-box;
   }
 
+  /* Mostrar el día encima de la imagen */
+  td.bloqueado::before {
+    content: "Día " attr(data-dia) " / Mes " attr(data-mes);
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
   td a img {
-    width: 50%;     /* imágenes más pequeñas en móvil */
-    max-width: 80px;
+    width: 60%;       /* imágenes más pequeñas en móvil */
+    max-width: 90px;
     height: auto;
-    display: block;
-    margin: 5px 0 0 0;
   }
 }
