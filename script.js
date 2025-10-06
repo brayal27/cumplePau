@@ -8,11 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const numeroMes = parseInt(td.dataset.mes);
     const link = td.querySelector("a");
 
-    // Desbloquear si la fecha del regalo es anterior o igual a hoy
-    if (
-      numeroMes < mesHoy ||
-      (numeroMes === mesHoy && numeroDia <= diaHoy)
-    ) {
+    if (numeroDia <= diaHoy && numeroMes === mesHoy) {
       td.classList.remove("bloqueado");
       if (link) link.style.pointerEvents = "auto";
     } else {
