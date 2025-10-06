@@ -8,7 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const numeroMes = parseInt(td.dataset.mes);
     const link = td.querySelector("a");
 
-    if (numeroDia <= diaHoy && numeroMes <= mesHoy) {
+    // Desbloquear si la fecha del regalo es anterior o igual a hoy
+    if (
+      numeroMes < mesHoy ||
+      (numeroMes === mesHoy && numeroDia <= diaHoy)
+    ) {
       td.classList.remove("bloqueado");
       if (link) link.style.pointerEvents = "auto";
     } else {
@@ -16,4 +20,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
